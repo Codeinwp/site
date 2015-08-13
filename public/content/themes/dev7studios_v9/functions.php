@@ -326,7 +326,7 @@ function dev7_support_form($atts) {
 			'license' 	=> $_POST['dev7_license_key'],
 			'item_name' => urlencode( 'product' )
 		);
-		$response = wp_remote_get( add_query_arg( $api_params, 'http://dev7studios.com' ) );
+		$response = wp_remote_get( add_query_arg( $api_params, 'https://dev7studios.com' ) );
 		if ( is_wp_error( $response ) ){
 			return false;
 		}
