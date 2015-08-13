@@ -25,23 +25,5 @@
 
 	<?php wp_footer(); ?>
 
-	<script id="conversions-settings">
-	window.conversionsSettings = {
-		site_id: 1
-	};
-	</script>
-	<script>
-	var _conversions = _conversions || [];
-	(function() {
-		var t   = document.createElement('script');
-		t.type  = 'text/javascript';
-		t.async = true;
-		t.id    = 'conversions-tracker';
-		t.src = '//dev7studios.com/conversions/public/track.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(t, s);
-	})();
-	</script>
-
 </body>
 </html>
