@@ -1,0 +1,474 @@
+/*
+ * Don't use the main style.css file. Put your styles here instead.
+ */
+
+$color-text: #555;
+$color-accent: #f16c49;
+$color-dark: #3f454a;
+
+@import 'edd';
+@import 'affwp';
+
+body {
+	font: 16px/1.6em "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: $color-text;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+ 	&,
+	&:visited {
+		color: $color-accent;
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:active {
+		color: $color-dark;
+		text-decoration: none;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "adelle-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	color: $color-dark;
+}
+
+p { margin: 0 0 1em; }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.btn,
+a.btn { color: #fff; }
+
+.btn-primary,
+a.btn-primary {
+	background-color: $color-dark;
+	border-color:$color-dark;
+
+	&:hover,
+	&:active {
+		background-color: #33373a;
+		border-color: #33373a;
+	}
+}
+
+.btn-success,
+a.btn-success {
+	background-color: #71b02f;
+	border-color: #71b02f;
+
+	&:hover,
+	&:active {
+		background-color: #79bc32;
+		border-color: #79bc32;
+	}
+}
+
+.pagination > li > a,
+.pagination > li > a:visited,
+.pagination > li > span { background-color: $color-dark; }
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > .current { background-color: #33373a; }
+
+.wrap {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.header-wrap { background-color: $color-accent; }
+
+.navbar-brand { padding: 7px 0; }
+.navbar-static-top { margin-bottom: 0; }
+.navbar-default {
+	background-color: transparent;
+
+	.navbar-nav>li>a {
+		font-weight: 600;
+		opacity: 0.8;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+	}
+	.navbar-brand:hover,
+	.navbar-brand:focus,
+	.navbar-nav>li>a:hover,
+	.navbar-nav>li>a:focus {
+		color: #fff;
+		opacity: 1;
+	}
+	.navbar-nav>.active>a,
+	.navbar-nav>.active>a:hover,
+	.navbar-nav>.active>a:focus,
+	.navbar-nav>.open>a,
+	.navbar-nav>.open>a:hover,
+	.navbar-nav>.open>a:focus { background-color: transparent; }
+	.navbar-nav>li>.dropdown-menu {
+		top: 80%;
+		border-radius: 4px;
+	}
+}
+
+.page-top {
+	background-color: transparent;
+	text-align: center;
+	margin-bottom: 0;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+
+	.page-title {
+		font-size: 50px;
+		margin: 0;
+		color: #fff;
+	}
+	.page-subtitle {
+		font-size: 20px;
+		font-weight: normal;
+		margin: 20px 0 0;
+	}
+	img {
+		display: block;
+		margin: 30px auto 0;
+	}
+}
+
+.entry-content img {
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	border-radius: 3px;
+}
+
+.footer {
+	background: #eef2f4;
+	font-size: 14px;
+	padding: 60px 0 20px;
+
+	.footer-cols {
+		h4 {
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+		}
+		ul {
+			list-style: none;
+			margin: 0 0 2em;
+			padding: 0;
+		}
+		a {
+			color: #939393;
+			&:hover { color: $color-dark; }
+		}
+	}
+
+	.footer-content {
+		color: #939393;
+		margin-top: 30px;
+		padding-top: 20px;
+		border-top: 1px solid rgba(0,0,0,0.05);
+
+		a {
+			color: #939393;
+			&:hover { color: $color-dark; }
+		}
+	}
+}
+
+.section {
+	.section-title,
+	.section-intro {
+		max-width: 700px;
+		margin: 0 auto 15px;
+		text-align: center;
+	}
+	.section-title { font-size: 40px; }
+	.section-intro { margin-bottom: 50px; }
+
+	&.section-dark {
+		background-color: $color-dark;
+		color: #fff;
+		color: rgba(255, 255, 255, 0.8);
+
+		h1,
+		h2,
+		h3,
+		.section-title {
+			color: #fff;
+			margin-top: 0;
+		}
+	}
+}
+
+.recent-wp-plugins {
+	text-align: center;
+	padding: 100px 0;
+
+	.section-intro { max-width: 585px; }
+	.edd_downloads_list { text-align: left; }
+	#edd_download_pagination { display: none; }
+}
+
+.dedicated-support {
+	padding: 100px 0;
+	margin: 0 -200%;
+
+	img {
+		display: block;
+		margin: 50px auto 0;
+	}
+}
+
+.tax-download_category .type-download:nth-child(2n+1) { clear: left; }
+
+body.blog .type-post,
+body.archive .type-post {
+	padding-bottom: 50px;
+	margin-bottom: 50px;
+	border-bottom: 1px solid #eee;
+}
+.entry-meta {
+	color: #999;
+	a {
+		color: #999;
+		&:hover { color: $color-accent; }
+	}
+}
+.entry-title {
+	margin: 0 0 15px;
+	a {
+		color: $color-dark;
+		&:hover { color: $color-accent; }
+	}
+}
+.entry-content h3:first-child { margin-top: 0; }
+.entry-thumb {
+	margin-bottom: 1.5em;
+
+	img {
+		display: block;
+		margin: 0 auto;
+		box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+		border-radius: 3px;
+	}
+}
+
+#comments {
+	margin-top: 70px;
+
+	.avatar {
+		float: left;
+		display: block;
+		margin-right: 15px;
+		border-radius: 65px;
+	}
+	.media { margin-top: 20px; }
+	.media-heading {
+		display: inline-block;
+		a {
+			color: $color-dark;
+			&:hover { color: $color-accent; }
+		}
+	}
+	time a {
+		color: #999;
+		&:hover { color: $color-accent; }
+	}
+}
+
+#isa-edd-specs {
+	margin-top: 50px;
+	caption { display: none; }
+}
+
+#pricing-table,
+#membership-table {
+	th,
+	td {
+		text-align: center;
+		padding: 10px 20px;
+		vertical-align: middle;
+	}
+	h3 {
+		font-size: 18px;
+		margin: 0;
+	}
+	.price td {
+		font-size: 26px;
+	}
+}
+#pricing-table { margin-bottom: 50px; }
+
+#about-peeps {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.dev7-affiliate-area { margin-top: 50px; }
+
+#other-projects-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	> li > a { color: $color-dark; }
+	.description {
+		font-size: 14px;
+		color: #999;
+		margin-left: 10px;
+	}
+	.sub-menu {
+		margin: 0 0 1em;
+		padding: 0 0 0 25px;
+	}
+}
+
+body.home {
+	overflow-x: hidden;
+
+	.wrap {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.header-wrap {
+		background: url('//d39ewx539944qs.cloudfront.net/header.jpg') no-repeat 50% 0%;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	.page-top .page-title {
+		max-width: 850px;
+		margin: 0 auto;
+	}
+}
+
+body.single-download .page-top,
+body.page-media-manager-plus .page-top {
+	padding-bottom: 0;
+	img {
+		border-top: 13px solid #ddd;
+		border-bottom: 1px solid #eee;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+	}
+
+	.post-thumb {
+		display: inline-block;
+		border-top: 13px solid #ddd;
+		border-bottom: 1px solid #eee;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin: 30px auto 0;
+		position: relative;
+
+		img {
+			display: inline;
+			border: 0;
+			border-radius: 0;
+			margin: 0;
+		}
+
+		.overlay {
+			background: #333;
+			background: rgba(0,0,0,0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: all 0.3s ease-out;
+
+			.btn {
+				padding: 13px 18px;
+				position: relative;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+		}
+
+		&:hover .overlay { opacity: 1; }
+	}
+
+	.video-thumb {
+		display: block;
+		max-width: 750px;
+		height: 435px;
+		background: #555;
+		border-top: 13px solid #ddd;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin: 30px auto 0;
+
+		iframe {
+			max-width: 100%;
+			margin: 0;
+		}
+	}
+}
+body.download-dev7studios-membership .page-top { padding-bottom: 48px; }
+body.page-partners h2 { margin-top: 0; }
+
+.widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui-tabs,
+#affwp-affiliate-dashboard {
+	border: 1px solid #eee;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	padding: 20px;
+	position: relative;
+	margin-top: 35px;
+
+	.ui-tabs-nav,
+	#affwp-affiliate-dashboard-tabs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: -32px;
+		left: -1px;
+
+		li { display: inline; }
+		a {
+			background: #fff;
+			border: 1px solid #eee;
+			border-bottom: 0;
+			padding: 10px 20px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			outline: none;
+			color: $color-dark;
+			font-weight: 600;
+		}
+		.ui-state-active a,
+		a:focus,
+		li.active a {
+			color: $color-accent;
+			text-decoration: none;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	body.home .jumbotron {
+		padding-top: 100px;
+		padding-bottom: 120px;
+	}
+}
+@media (min-width: 1200px){
+	.container { width: 1000px; }
+}

@@ -1,0 +1,40 @@
+# BEGIN Security
+
+# These files can help identify the WP version
+RewriteRule ^wp/(license.txt|readme.html) - [R=404,L]
+
+# Not using XML-RPC
+RewriteRule ^wp/xmlrpc.php - [R=404,L]
+
+# No need for anyone to access the install page
+RewriteRule ^wp/wp-admin/install.php - [R=404,L]
+
+# We don't use the core wp-content directory
+RewriteRule ^wp/wp-content/ - [R=404,L]
+
+# These files should never be accessed directly
+RewriteRule ^wp-config.php - [R=404,L]
+RewriteRule ^wp/wp-config-sample.php - [R=404,L]
+RewriteRule ^wp/wp-admin/includes/ - [R=404,L]
+RewriteRule !^wp/wp-includes/ - [S=3]
+RewriteRule ^wp/wp-includes/[^/]+\.php - [R=404,L]
+RewriteRule ^wp/wp-includes/js/tinymce/langs/.+\.php - [R=404,L]
+RewriteRule ^wp/wp-includes/theme-compat/ - [R=404,L]
+
+# Lock down most files in content
+RewriteRule !^content/ - [S=1]
+RewriteRule !^content/.*\.(xml|css|jpe?g|png|gif|js|woff|ttf|svg|eot|mp3|mp4|m4v|pdf|html) - [R=404,L]
+
+# END Security
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

@@ -1,0 +1,83 @@
+.edd_download_inner {
+	padding: 0;
+	margin: 0;
+}
+
+.edd_download {
+	margin-bottom: 30px;
+	&.col-sm-6 { margin-bottom: 70px; }
+}
+.edd_download_image img {
+	display: block;
+	border-top: 10px solid #ddd;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	margin: 0 auto;
+}
+.edd_download_title {
+	font-size: 22px;
+
+	a,
+	a:visited {
+		color: $color-dark;
+		&:hover { color: $color-accent; }
+	}
+}
+
+.edd_download_purchase_form { margin: 2em 0; }
+.widget .edd_download_purchase_form { margin: 0; }
+
+.widget_edd_cart_widget {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#edd_checkout_cart td,
+#edd_checkout_cart th,
+#edd_checkout_cart .edd_cart_header_row th { padding: .5em 1.387em; }
+
+#edd_checkout_form_wrap fieldset {
+	padding: 0;
+	border: 0;
+}
+#edd_checkout_form_wrap #edd-payment-mode-wrap .edd-payment-mode-label { display: none; }
+#edd_checkout_form_wrap legend,
+#edd_checkout_form_wrap fieldset#edd_cc_fields legend {
+	text-align: center;
+	padding-bottom: 15px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #eee;
+}
+
+#edd_checkout_form_wrap,
+#edd_payment_mode_select,
+#edd_checkout_form_wrap fieldset,
+#edd_checkout_form_wrap fieldset#edd_register_fields #edd_checkout_user_info { margin-bottom: 60px; }
+#edd_checkout_form_wrap #edd_purchase_submit { margin-bottom: 20px; }
+
+#edd_checkout_form_wrap #edd-login-account-wrap,
+#edd_checkout_form_wrap #edd-new-account-wrap {
+	margin: 0 0 3em;
+	border: 1px solid #eee;
+}
+#edd_checkout_form_wrap #edd-new-account-wrap { margin-bottom: 2em; }
+
+#edd-payment-mode-wrap br { display: none; }
+#edd_checkout_form_wrap .edd-payment-icons { margin-top: 3em; }
+#edd-payment-mode-wrap label {
+	font-size: 100%;
+	text-transform: uppercase;
+}
+
+#edd_checkout_form_wrap input.edd-input,
+#edd_checkout_form_wrap textarea.edd-input { width: 100%; }
+
+#edd_checkout_form_wrap fieldset#edd_cc_fields {
+	background: transparent;
+	border: 0;
+}
+
+#edd_checkout_form_wrap fieldset#edd_sl_renewal_fields { border: 1px solid #eee; }

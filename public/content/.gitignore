@@ -1,0 +1,15 @@
+*
+!.gitignore
+
+# Include folders
+!mu-plugins/
+mu-plugins/*
+!plugins/
+plugins/*
+!themes/
+themes/*
+!uploads/
+uploads/*
+
+# Include individual files/folders
+!themes/dev7studios_v9

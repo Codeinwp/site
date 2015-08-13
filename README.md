@@ -1,2 +1,1 @@
-# site
-Dev7studios.com
+# Dev7studios.com
