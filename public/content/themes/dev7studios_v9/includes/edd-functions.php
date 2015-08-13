@@ -91,7 +91,7 @@ function dev7_get_license_limit( $limit, $download_id, $license_id, $price_id ) 
 }
 add_filter( 'edd_get_license_limit', 'dev7_get_license_limit', 10, 4 );
 
-function dev7_accepted_payment_image( $card ) {
+/*function dev7_accepted_payment_image( $card ) {
 	$image = edd_locate_template( 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . $card . '.gif', false );
 	$content_dir = WP_CONTENT_DIR;
 	$content_dir = str_replace( 'public/content', 'public/shared/content', $content_dir );
@@ -126,7 +126,7 @@ add_filter( 'edd_accepted_payment_discover_image', 'dev7_accepted_payment_discov
 function dev7_accepted_payment_paypal_image() {
 	return dev7_accepted_payment_image( 'paypal' );
 }
-add_filter( 'edd_accepted_payment_paypal_image', 'dev7_accepted_payment_paypal_image' );
+add_filter( 'edd_accepted_payment_paypal_image', 'dev7_accepted_payment_paypal_image' );*/
 
 /**
  * EDD Cross-sell & Upsell - Removing the excerpt
