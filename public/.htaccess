@@ -23,7 +23,7 @@ RewriteRule ^wp/wp-includes/theme-compat/ - [R=404,L]
 
 # Lock down most files in content
 RewriteRule !^content/ - [S=1]
-RewriteRule !^content/.*\.(xml|css|jpe?g|png|gif|js|woff|ttf|svg|eot|mp3|mp4|m4v|pdf|html) - [R=404,L]
+RewriteRule !^content/.*\.(xml|css|jpe?g|png|gif|js|woff|ttf|svg|eot|mp3|mp4|m4v|pdf|html|zip) - [R=404,L]
 
 # END Security
 
