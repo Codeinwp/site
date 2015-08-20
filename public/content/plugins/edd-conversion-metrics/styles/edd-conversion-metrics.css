@@ -1,0 +1,19 @@
+#edd-cm-traffic-conversions { padding-top: 0; }
+#edd-cm-traffic-conversions .explanation {
+	color: #999;
+	clear: both;
+	margin: 0;
+}
+
+#edd-cm-traffic-sources-graph,
+#edd-cm-new-vs-returning-graph {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.edd-cm-clearfix:before,
+.edd-cm-clearfix:after { content: ""; display: table; }
+.edd-cm-clearfix:after { clear: both; }
+.edd-cm-clearfix { zoom: 1; }

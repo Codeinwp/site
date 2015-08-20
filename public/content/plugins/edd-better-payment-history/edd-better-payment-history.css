@@ -1,0 +1,18 @@
+.bph-status-pending,
+.bph-status-complete,
+.bph-status-refunded,
+.bph-status-failed,
+.bph-status-abandoned,
+.bph-status-revoked {
+	background: #333;
+	padding: 2px 5px;
+	border-radius: 2px;
+	color: #fff;
+}
+
+.bph-status-pending { background: orange; }
+.bph-status-complete { background: green; }
+.bph-status-refunded { background: #999; }
+.bph-status-failed { background: red; }
+.bph-status-abandoned { background: #666; }
+.bph-status-revoked {}

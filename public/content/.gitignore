@@ -12,4 +12,8 @@ themes/*
 uploads/*
 
 # Include individual files/folders
+!plugins/edd-better-payment-history
+!plugins/edd-better-reports
+!plugins/edd-conversion-metrics
+!plugins/edd-export-emails
 !themes/dev7studios_v9
