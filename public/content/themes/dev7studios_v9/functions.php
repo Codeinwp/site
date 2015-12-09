@@ -362,6 +362,18 @@ function dev7_support_form($atts) {
 }
 add_shortcode('support_form', 'dev7_support_form');
 
+// Fix for WP 4.4 responsive images
+function dev7_fix_ssl_url( $sources, $size_array, $image_src, $image_meta, $attachment_id ) {
+    if ( is_ssl() ) {
+        foreach ( $sources as $key => $source ) {
+            $sources[$key]['url'] = str_ireplace( 'http://', 'https://', $source['url'] );
+        }
+    }
+
+    return $sources;
+}
+add_filter( 'wp_calculate_image_srcset', 'dev7_fix_ssl_url', 10, 5 );
+
 // Includes
 require_once( 'includes/edd-functions.php' );
 require_once( 'includes/metaboxes.php' );
