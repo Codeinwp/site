@@ -26,8 +26,7 @@ get_template_part( 'parts/header' ); ?>
 					<?php echo do_shortcode( '[edd_profile_editor]' ); ?>
 				</div>
 				<div id="tab-subscriptions">
-					<p>If you have purchased a Dev7studios Membership you can control it below.</p>
-					<?php echo do_shortcode( '[edd_recurring_cancel]' ); ?>
+					<?php echo do_shortcode( '[edd_subscriptions]' ); ?>
 				</div>
 				<div id="tab-affiliates">
 					Manage your affiliate account on the <a href="<?php echo home_url( 'affiliates' ); ?>">Affiliates page</a>.
