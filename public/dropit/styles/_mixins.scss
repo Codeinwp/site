@@ -1,0 +1,51 @@
+//=================================
+// Basic Mixins
+//=================================
+@mixin border-radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-radius-m($tl: 5px, $tr: 5px, $br: 5px, $bl: 5px) {
+    -moz-border-radius: $tl $tr $br $bl;
+    -webkit-border-top-left-radius: $tl;
+    -webkit-border-top-right-radius: $tr;
+    -webkit-border-bottom-right-radius: $br;
+    -webkit-border-bottom-left-radius: $bl;
+    border-radius: $tl $tr $br $bl;
+}
+
+@mixin box-shadow($hor: 0, $ver: 1px, $blur: 1px, $color: rgba(0,0,0,0.4)) {
+    -webkit-box-shadow: $hor $ver $blur $color;
+    -moz-box-shadow: $hor $ver $blur $color;
+    box-shadow: $hor $ver $blur $color;
+}
+
+@mixin transition($property: all, $duration: 0.5s, $timing: linear) {
+    -webkit-transition: $property $duration $timing;
+    -moz-transition: $property $duration $timing;
+    -ms-transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+
+@mixin box-sizing($property: border-box) {
+    -webkit-box-sizing: $property;
+	-moz-box-sizing: $property;
+	box-sizing: $property;
+}
+
+@mixin clearfix {
+    zoom: 1;
+    
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    
+    &:after {
+        clear: both;
+    }
+}

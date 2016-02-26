@@ -1,0 +1,1 @@
+<?php$E_class = 'image_carousel';if (!isset($E_script)) $E_script = '$("#'.$E_id.'").carouFredSel();';include $site['root_rel'].'examples/scripts/_script.php';?>

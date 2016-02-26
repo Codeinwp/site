@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Dropit - Stupidly Simple jQuery Dropdowns</title>
+    <meta name="description" content="Dropit is a jQuery plugin for single level dropdown menu's.">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css" />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/ir_black.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="dropit/dropit.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="sample-styles.css" type="text/css" media="screen" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="scripts/modernizr-2.6.1.min.js"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3892196-52']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <h1>Dropit</h1>
+
+        <div class="dl-box">
+            <a href="https://github.com/gilbitron/Dropit/releases" class="button">Download</a><br />
+            <a href="https://github.com/gilbitron/Dropit" class="button fork">Fork on Github</a>
+        </div>
+
+        <p>Dropit is a jQuery plugin for single level dropdown menu's. Nothing fancy pants in here. Just simple
+        and flexible dropdown's in jQuery.</p>
+
+        <ul id="menu1" class="menu">
+            <li><a href="#" class="btn">Click Me</a>
+            <ul>
+                <li><a href="#">Some Action 1</a></li>
+                <li><a href="#">Some Action 2</a></li>
+                <li><a href="#">Some Action 3</a></li>
+                <li><a href="#">Some Action 4</a></li>
+            </ul></li>
+        </ul>
+
+        <ul id="menu2" class="menu">
+            <li><a href="#" class="btn">Hover Me</a>
+            <ul>
+                <li><a href="#">Some Action 1</a></li>
+                <li><a href="#">Some Action 2</a></li>
+                <li><a href="#">Some Action 3</a></li>
+                <li><a href="#">Some Action 4</a></li>
+            </ul></li>
+        </ul>
+
+        <h2>Requirements</h2>
+
+        <p>Works in all major browsers including IE7+. Requires jQuery v1.8.</p>
+
+        <h2>Usage</h2>
+
+        <p>Include the required files.</p>
+        <pre class="html"><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;dropit.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;dropit.css&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+
+        <p>Add some markup.</p>
+        <pre class="html"><code>&lt;ul class=&quot;menu&quot;&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;Dropdown&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <p>Hook up the jQuery.</p>
+        <pre class="javascript"><code>$(document).ready(function() {
+    $('.menu').dropit();
+});</code></pre>
+
+        <h2>API Documentation</h2>
+
+        <p>Available options.</p>
+        <pre class="javascript"><code>action: 'click', // The open action for the trigger
+submenuEl: 'ul', // The submenu element
+triggerEl: 'a', // The trigger element
+triggerParentEl: 'li', // The trigger parent element
+afterLoad: function(){}, // Triggers when plugin has loaded
+beforeShow: function(){}, // Triggers before submenu is shown
+afterShow: function(){}, // Triggers after submenu is shown
+beforeHide: function(){}, // Triggers before submenu is hidden
+afterHide: function(){} // Triggers before submenu is hidden</code></pre>
+
+        <p>After the plugin has loaded there are certain classes that get added to the dropdown elements.
+        Below is a style guide of the classes that get added. Note that <code>.dropit-open</code> only exists
+        when the submenu is open.</p>
+        <pre class="html"><code>&lt;ul class=&quot;dropit&quot;&gt;
+    &lt;li class="dropit-trigger dropit-open"&gt;
+        &lt;a href=&quot;#&quot;&gt;Dropdown&lt;/a&gt;
+        &lt;ul class="dropit-submenu"&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Some Action 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h2>Styling the Dropdown</h2>
+
+        <p>Dropit.css only provides the essential styles required for Dropit to work. See the
+        <a href="sample-styles.css">sample-styles.css</a> stylesheet we've created to get an idea of how
+        to style the dropdown.</p>
+
+        <h2>Credits &amp; License</h2>
+
+        <p>Dropit was created by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a> from
+        <a href="http://dev7studios.com">Dev7studios</a> and released under the
+        <a href="https://github.com/gilbitron/Lean-Slider/blob/master/license.txt">MIT license</a>.</p>
+
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script src="dropit/dropit.js"></script>
+    <script src="scripts/lib.js"></script>
+
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:10px;top:35%;">
+    <a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+    <a class="addthis_button_tweet" tw:count="vertical"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50238bd943c6bd8a"></script>
+    <!-- AddThis Button END -->
+</body>
+</html>

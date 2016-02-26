@@ -1,0 +1,21 @@
+//=================================
+// Input Styles
+//=================================
+input,
+textarea,
+select {
+	padding: 5px;
+	font: 400 1em Verdana, Sans-serif;
+	color: #666;
+	background: #fff;
+	border: 1px solid #999;
+	margin: 0 0 1em 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	color: #000;
+	background: #fff;
+	border: 1px solid #666;
+}

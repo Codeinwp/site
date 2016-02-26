@@ -1,0 +1,1 @@
+<?php$E_class = 'list_carousel';if (!isset($E_script)) $E_script = '$("#'.$E_id.'").carouFredSel({	items: 14});';include $site['root_rel'].'examples/scripts/_script.php';?>

@@ -1,0 +1,1 @@
+<?php$E_class = 'html_carousel';if (!isset($E_script)) $E_script = '$("#'.$E_id.'").carouFredSel({	direction	: "up",	items		: 1});';include $site['root_rel'].'examples/scripts/_script.php';?>

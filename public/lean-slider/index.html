@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    
+    <!--
+    
+      _                         _____ _ _     _           
+     | |                       / ____| (_)   | |          
+     | |     ___  __ _ _ __   | (___ | |_  __| | ___ _ __ 
+     | |    / _ \/ _` | '_ \   \___ \| | |/ _` |/ _ \ '__|
+     | |___|  __/ (_| | | | |  ____) | | | (_| |  __/ |   
+     |______\___|\__,_|_| |_| |_____/|_|_|\__,_|\___|_|   
+                                                          
+                                                          
+    -->
+    
+    <title>Lean Slider - A Lean and Progressive Free jQuery Image Slider</title>
+    <meta name="description" content="Lean Slider is a lean and progressive free jQuery image slider.">
+    
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css" />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/ir_black.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="scripts/lean-slider/lean-slider.css" type="text/css" />
+    <link rel="stylesheet" href="sample-styles.css" type="text/css" />
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="scripts/modernizr-2.6.1.min.js"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3892196-49']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div class="slider-wrapper">
+            <div id="slider">
+                <div class="slide1">
+                    <img src="images/1.jpg" alt="" />
+                </div>
+                <div class="slide2">
+                    <img src="images/2.jpg" alt="" />
+                </div>
+                <div class="slide3">
+                    <img src="images/3.jpg" alt="" />
+                </div>
+                <div class="slide4">
+                    <img src="images/4.jpg" alt="" />
+                </div>
+            </div>
+            <div id="slider-direction-nav"></div>
+            <div id="slider-control-nav"></div>
+        </div>
+        
+        <h1>Lean Slider</h1>
+        
+        <div class="dl-box">
+            <a href="http://dev7studios.com/downloads/61" class="btn">Download v1.0</a><br />
+            <a href="https://github.com/gilbitron/Lean-Slider" class="btn fork">Fork on Github</a>
+        </div>
+
+        <p>The Lean Slider is a simple jQuery image slider built on the principles of <a href="http://en.wikipedia.org/wiki/Progressive_enhancement" target="_blank">Progressive Enhancement</a>.
+        Unlike other sliders it does not provide any styling or fancy transition effects. It simply provides
+        a javascript framework (slideshow functionality, navigation controls, callback functions etc.) for you to
+        build a slider on top of.</p>
+        
+        <p>The idea is that you provide your own styling and transition styles in the form of CSS styles
+        and transitions. This is not for beginners and will require a solid knowledge of up-to-date web development
+        practices to make the Lean Slider look good.</p>
+        
+        <p>The Lean Slider is a result of taking our years of experience building the <a href="http://nivo.dev7studios.com">Nivo Slider</a> 
+        and stripping it down to the bare minimum to provide a responsive, flexible, extensible and future proof image slider for
+        serious web developers.</p>
+        
+        <h2>Requirements</h2>
+        
+        <p>Works in all major browsers including IE9+. Requires jQuery v1.8.</p>
+        
+        <h2>Usage</h2>
+        
+        <p>Include the required files.</p>
+        <pre class="html"><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;lean-slider.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;lean-slider.css&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+
+        <p>Add some markup. All top level elements inside the slider div are assumed to be "slides".</p>
+        <pre class="html"><code>&lt;div id=&quot;slider&quot;&gt;
+    &lt;div class=&quot;slide1&quot;&gt;
+        &lt;img src=&quot;images/1.jpg&quot; alt=&quot;&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;slide2&quot;&gt;
+        &lt;img src=&quot;images/2.jpg&quot; alt=&quot;&quot; /&gt;
+        &lt;p&gt;Add content in here.&lt;/p&gt;
+    &lt;/div&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+        <p>Hook up the jQuery.</p>
+        <pre class="javascript"><code>$(document).ready(function() {
+    $('#slider').leanSlider();
+});</code></pre>
+
+        <h2>Providing Controls &amp; Styles</h2>
+        
+        <p>Without providing any styles or options the Lean Slider will simply show a slideshow and hide/show individual slides.
+        To add direction navigation (previous/next) and control navigation (1,2,3...) you need to specify selector strings
+        for existing elements using the <code>directionNav</code> and <code>controlNav</code> options.</p>
+        
+        <p>To add transition effects and styles to the slider you need to provide your own CSS. See the 
+        <a href="sample-styles.css">sample-styles.css</a> stylesheet we've created for our slider above to get an idea of how 
+        to style the slider.</p>
+
+        <h2>API Documentation</h2>
+        
+        <p>Available options.</p>
+        <pre class="javascript"><code>pauseTime: 4000, // the delay between each slide, false to turn off slideshow
+pauseOnHover: true, // pause the slideshow on hover
+startSlide: 0, // zero based index of starting slide
+directionNav: '', // selector string for directionNav element 
+directionNavPrevBuilder: '', // function to override directionNav "prev" output
+directionNavNextBuilder: '', // function to override directionNav "next" output
+controlNav: '', // selector string for controlNav element 
+controlNavBuilder: '', // function to override controlNav "next" output
+prevText: 'Prev', // text for the "prev" directionNav element
+nextText: 'Next', // text for the "next" directionNav element
+beforeChange: function(){}, // beforeChange callback
+afterChange: function(){}, // afterChange callback
+afterLoad: function(){} // afterLoad callback</code></pre>
+
+        <p>You can use the utility "Builder" functions to override the default output for the <code>directionNav</code> 
+        and <code>controlNav</code>.</p>
+        <pre class="javascript"><code>directionNavPrevBuilder: function(prevText){
+    return '&lt;a href="#" class="lean-slider-prev"&gt;'+ prevText +'&lt;/a&gt;';        
+}
+
+directionNavNextBuilder: function(nextText){
+    return '&lt;a href="#" class="lean-slider-prev"&gt;'+ nextText +'&lt;/a&gt;';        
+}
+
+controlNavBuilder: function(index, slide){
+    return '&lt;a href="#" class="lean-slider-control-nav"&gt;'+ (index + 1) +'&lt;/a&gt;';
+}</code></pre>
+
+        <p>Both the <code>beforeChange</code> and <code>afterChange</code> callbacks have the current slide index as
+        a parameter.</p>
+        <pre class="javascript"><code>beforeChange: function(currentSlide){
+    // ...       
+}</code></pre>
+
+        <h2>Credits &amp; License</h2>
+        
+        <p>The Lean Slider was created by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a> from 
+        <a href="http://dev7studios.com">Dev7studios</a> and released under the 
+        <a href="https://github.com/gilbitron/Lean-Slider/blob/master/license.txt">MIT license</a>.
+        Images &copy; <a href="http://www.pixar.com" target="_blank">Pixar</a>.</p>
+        
+    </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script src="scripts/lean-slider/lean-slider.js"></script>
+    <script src="scripts/lib.js"></script>
+    
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:10px;top:35%;">
+    <a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+    <a class="addthis_button_tweet" tw:count="vertical"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50238bd943c6bd8a"></script>
+    <!-- AddThis Button END -->
+</body>
+</html>
