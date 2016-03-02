@@ -374,6 +374,27 @@ function dev7_fix_ssl_url( $sources, $size_array, $image_src, $image_meta, $atta
 }
 add_filter( 'wp_calculate_image_srcset', 'dev7_fix_ssl_url', 10, 5 );
 
+function dev7_ssl_post_thumbnail_urls( $url, $post_id ) {
+	if( !wp_attachment_is_image( $post_id ) ) {
+		return $url;
+	}
+
+	//Correct protocol for https connections
+	list( $protocol, $uri ) = explode( '://', $url, 2 );
+	if ( is_ssl() ) {
+		if( 'http' == $protocol ) {
+			$protocol = 'https';
+		}
+	} else {
+		if( 'https' == $protocol ) {
+			$protocol = 'http';
+		}
+	}
+
+	return $protocol . '://' . $uri;
+}
+add_filter( 'wp_get_attachment_url', 'dev7_ssl_post_thumbnail_urls', 10, 2 );
+
 // Includes
 require_once( 'includes/edd-functions.php' );
 require_once( 'includes/metaboxes.php' );
