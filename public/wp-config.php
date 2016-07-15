@@ -37,11 +37,6 @@ define( 'WPLANG', '' );
 define( 'WP_DEBUG_DISPLAY', false );
 define( 'WP_DEBUG', false );
 
-// =========================
-// Disable automatic updates
-// =========================
-define( 'AUTOMATIC_UPDATER_DISABLED', false );
-
 // ======================================
 // Load a Memcached config if we have one
 // ======================================
